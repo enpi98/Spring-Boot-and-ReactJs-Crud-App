@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getUsers() {
         List<User> userList = new ArrayList<>();
-        List<UserEntity> list = userRepo.findAll();
+        List<UserEntity> list = userRepo.findAll(Sort.by(Sort.Order.asc("id")));
         if(list!=null && list.size()>0)
         {
             for(UserEntity ue:list)
