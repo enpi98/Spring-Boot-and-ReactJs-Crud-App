@@ -1,5 +1,6 @@
 package com.crudapp.serviceImpl;
 
+import org.springframework.data.domain.Sort;
 import com.crudapp.entity.UserEntity;
 import com.crudapp.model.User;
 import com.crudapp.repository.UserRepo;
