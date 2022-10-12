@@ -1,11 +1,11 @@
 package com.crudapp.serviceImpl;
 
-import org.springframework.data.domain.Sort;
 import com.crudapp.entity.UserEntity;
 import com.crudapp.model.User;
 import com.crudapp.repository.UserRepo;
 import com.crudapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
@@ -27,6 +27,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getUsers() {
         List<User> userList = new ArrayList<>();
+
         List<UserEntity> list = userRepo.findAll(Sort.by(Sort.Order.asc("id")));
         if(list!=null && list.size()>0)
         {
@@ -69,6 +70,7 @@ public class UserServiceImpl implements UserService {
         return userEntity.getId();
     }
 }
+
 
 
 
